@@ -2,7 +2,7 @@
   <form [formGroup]="form">
     <img
       class="logo-triphabittat"
-      src="../../../../assets/mdigital-logo.png"
+      src="../../../../assets/llogo.png"
       alt="logo"
     />
     <div class="form-input">
@@ -24,6 +24,6 @@
     >
       Entrar
     </button>
-    <a class="button-forgot-password" mat-button>Cadastre-se</a>
+    <a class="button-forgot-password" [routerLink]="['register']">Cadastre-se</a>
   </form>
 </section>

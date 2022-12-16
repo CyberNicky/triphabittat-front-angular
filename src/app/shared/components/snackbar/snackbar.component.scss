@@ -1,0 +1,17 @@
+section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+h4 {
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+mat-icon {
+  color: white;
+  cursor: pointer;
+}
