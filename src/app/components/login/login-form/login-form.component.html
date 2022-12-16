@@ -1,0 +1,29 @@
+<section class="auth-form">
+  <form [formGroup]="form">
+    <img
+      class="logo-triphabittat"
+      src="../../../../assets/mdigital-logo.png"
+      alt="logo"
+    />
+    <div class="form-input">
+      <input type="text" name="email" placeholder="E-mail" />
+    </div>
+    <div class="form-input">
+      <input
+        type="text"
+        formControlName="password"
+        name="password"
+        placeholder="Senha"
+      />
+    </div>
+    <button
+      mat-button
+      class="button-login"
+      type="submit"
+      [disabled]="this.form.invalid"
+    >
+      Entrar
+    </button>
+    <a class="button-forgot-password" mat-button>Cadastre-se</a>
+  </form>
+</section>
