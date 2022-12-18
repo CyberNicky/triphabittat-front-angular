@@ -1,0 +1,46 @@
+.card-destino {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.card-destino:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cards-container{
+    display: grid;
+    max-width: 1200px;
+    margin: 0 auto; 
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px
+
+}
+
+.img-container{
+    height: 280px;
+    width: 290px;
+    background: black;
+}
+
+.img-destino {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+.card-title{
+    font-weight: 600;
+    font-size: 18px;
+    margin: 15px 0 5px 5px;
+
+
+}
+.card-description{
+    color: rgb(129, 129, 129);
+    margin: 0 0 5px 5px;
+}

@@ -12,6 +12,7 @@ import { MaterialModule } from './shared/material.module';
 import { SnackbarComponent } from './shared/components/snackbar/snackbar.component';
 import { DefaultCrudService } from './shared/services/default-crud.service';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     LoginFormComponent,
     RegisterFormComponent,
-    SnackbarComponent
+    SnackbarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
