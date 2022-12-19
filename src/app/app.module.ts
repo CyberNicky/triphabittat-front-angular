@@ -1,3 +1,4 @@
+import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -12,7 +13,7 @@ import { MaterialModule } from './shared/material.module';
 import { SnackbarComponent } from './shared/components/snackbar/snackbar.component';
 import { DefaultCrudService } from './shared/services/default-crud.service';
 import { HttpClientModule } from '@angular/common/http';
-import { HomeComponent } from './components/home/home.component';
+import { DestinationComponent } from './components/destination/destination.component';
 import { DestinationDetailsComponent } from './components/destination-details/destination-details.component';
 
 @NgModule({
@@ -23,8 +24,9 @@ import { DestinationDetailsComponent } from './components/destination-details/de
     LoginFormComponent,
     RegisterFormComponent,
     SnackbarComponent,
-    HomeComponent,
-    DestinationDetailsComponent
+    DestinationDetailsComponent,
+    DestinationComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

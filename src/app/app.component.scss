@@ -6,3 +6,54 @@ body {
   transition: 0.2s;
   margin: 0 !important;
 }
+
+.example-sidenav-content{
+  display: flex;
+  justify-content: center;
+  width: 120px;
+  button{
+    color: blue;
+  }
+}
+.example-sidenav{
+  background-color: rgb(25, 25, 179);
+    
+}
+.logo-img{
+  width: 205px;
+  height: 205px;
+  .img-logo{
+    width: 205px;
+    height: 205px;
+    object-fit: cover;
+    background-color: rgb(25, 25, 179);
+    // border-radius: 50%;
+
+  }
+}
+
+.icon-plus{
+  justify-content: flex-end;
+  display: flex;
+  .material-icons{
+    background-color: #6495ED;
+    border-radius: 8px;
+  }
+}
+
+mat-drawer-container {
+  mat-drawer{
+    div.logo-img{
+      mat-list{
+        button{
+          color: white;
+        }
+      }
+    }
+
+    }
+  }
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+

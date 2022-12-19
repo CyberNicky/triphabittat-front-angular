@@ -1,8 +1,12 @@
 .container {
+    min-height: 100vh;
    display: flex;
    justify-content: center;
    align-items: center;
    flex-direction: column;
+   h1{
+    
+   }
 }
 
 .avaliation-destino {
@@ -19,8 +23,8 @@
 }
 
 .img-container {
-    height: 280px;
-    width: 290px;
+    height: 400px;
+    width: 390px;
     background: black;
 }
 
@@ -45,5 +49,8 @@
 }
 .avaliation{
     display: flex;
+}
+.avaliations-title{
+    color: black
 }
 
