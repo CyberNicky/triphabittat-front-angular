@@ -13,6 +13,7 @@ import { SnackbarComponent } from './shared/components/snackbar/snackbar.compone
 import { DefaultCrudService } from './shared/services/default-crud.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
+import { DestinationDetailsComponent } from './components/destination-details/destination-details.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HomeComponent } from './components/home/home.component';
     LoginFormComponent,
     RegisterFormComponent,
     SnackbarComponent,
-    HomeComponent
+    HomeComponent,
+    DestinationDetailsComponent
   ],
   imports: [
     BrowserModule,
