@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { DefaultCrudService } from 'src/app/shared/services/default-crud.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,7 +11,8 @@ export class DestinationComponent implements OnInit {
   public allDestino: any = []
 
   constructor(
-    public http: DefaultCrudService
+    public http: DefaultCrudService,
+    public router: Router
   ) { }
 
   ngOnInit(): void {

@@ -5,21 +5,21 @@
     <div class="logo-img">
       <img class="img-logo" src="../assets/logo2.png" />
       <mat-list>
-        <button class="color-title" color="white" mat-button >
-          <mat-icon>favorite</mat-icon>
+        <button class="color-title" mat-button (click)="this.router.navigate(['home'])"  >
+          <mat-icon>home</mat-icon>
           Home
         </button>
         
         </mat-list>
         <mat-list>
-          <button class="color-title" mat-button >
+          <button class="color-title" mat-button (click)="this.router.navigate(['destinos'])" >
             <mat-icon>favorite</mat-icon>
             Destinos
           </button>
         </mat-list>
         <mat-list>
           <button class="color-title" mat-button >
-            <mat-icon>favorite</mat-icon>
+            <mat-icon>open_in_new</mat-icon>
             Logout
           </button>
         </mat-list>

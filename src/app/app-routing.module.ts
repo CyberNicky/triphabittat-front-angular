@@ -1,3 +1,5 @@
+import { EditCardsComponent } from './components/edit-cards/edit-cards.component';
+import { CreateCardComponent } from './components/create-card/create-card.component';
 import { HomeComponent } from './components/home/home.component';
 import { DestinationDetailsComponent } from './components/destination-details/destination-details.component';
 import { DestinationComponent } from './components/destination/destination.component';
@@ -41,6 +43,20 @@ const routes: Routes = [
   {
     path: 'destinos',
     component: DestinationComponent,
+    data: {
+      hasSystemBar: true,
+    }
+  },
+  {
+    path: 'create-card',
+    component: CreateCardComponent,
+    data: {
+      hasSystemBar: true,
+    }
+  },
+  {
+    path: 'edit-cards',
+    component: EditCardsComponent,
     data: {
       hasSystemBar: true,
     }

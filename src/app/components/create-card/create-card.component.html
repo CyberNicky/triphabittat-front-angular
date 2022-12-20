@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="title-container">
+    <p>Register news cards</p>
+  </div>
+  <form class="form" [formGroup]="form" (ngSubmit)="handleCreate()">
+    <mat-form-field appearance="fill">
+      <mat-label>Link da foto</mat-label>
+      <input matInput formControlName="imgUrl" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Selecione o estado</mat-label>
+      <mat-select formControlName="estado">
+        <mat-option value="one">First option</mat-option>
+        <mat-option value="two">Second option</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Selecione a cidade</mat-label>
+      <mat-select formControlName="name">
+        <mat-option value="one">First option</mat-option>
+        <mat-option value="two">Second option</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Descrição</mat-label>
+      <textarea matInput formControlName="descricao"> </textarea>
+    </mat-form-field>
+    <button class="color-title" mat-button type="submit">
+      <mat-icon>near_me</mat-icon>
+      Register
+    </button>
+  </form>
+</div>

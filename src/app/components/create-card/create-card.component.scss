@@ -1,0 +1,15 @@
+.container{
+    min-height: 100vh;
+    p{
+        font-weight: 600;
+        font-size: 50px;
+        margin: 15px 0 5px 15px;
+    }
+}
+
+.form{
+
+    margin: 36px;
+    display: flex;
+    flex-direction: column;
+}

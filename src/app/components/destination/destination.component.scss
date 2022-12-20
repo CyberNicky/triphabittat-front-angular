@@ -46,11 +46,16 @@
 .card-title{
     font-weight: 600;
     font-size: 18px;
-    margin: 15px 0 5px 5px;
+    margin: 15px 0 5px 15px;
 
 
 }
 .card-description{
     color: rgb(129, 129, 129);
-    margin: 0 0 5px 5px;
+    margin: 0 0 15px 15px;
+}
+.icon-container{
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
 }

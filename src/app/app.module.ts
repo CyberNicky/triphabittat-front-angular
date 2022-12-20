@@ -18,6 +18,11 @@ import { DestinationDetailsComponent } from './components/destination-details/de
 import { AuthGuardService } from './authentication/auth-guard.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { MatMenuModule} from '@angular/material/menu';
+import { CreateCardComponent } from './components/create-card/create-card.component';
+import { EditCardsComponent } from './components/edit-cards/edit-cards.component';
+import { DeleteCardsComponent } from './components/delete-cards/delete-cards.component';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +35,9 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
     DestinationDetailsComponent,
     DestinationComponent,
     HomeComponent,
+    CreateCardComponent,
+    EditCardsComponent,
+    DeleteCardsComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +46,8 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
     ReactiveFormsModule,
     MaterialModule,
     HttpClientModule,
+    MatMenuModule
+
   ],
   providers: [
     JwtHelperService,

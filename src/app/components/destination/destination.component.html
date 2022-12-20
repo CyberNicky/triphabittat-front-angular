@@ -2,13 +2,30 @@
   <div class="cards-container">
     <div class="card-destino" *ngFor="let destino of allDestino">
       <div class="img-container">
-        <img
-          class="img-destino"
-          src="https://images.pexels.com/photos/5992619/pexels-photo-5992619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        />
+        <img class="img-destino" [src]="destino.img_url" />
       </div>
-
+      <div class="icon-container">
       <p class="card-title">{{ destino.name }}</p>
+      <div class="icon">
+        <button
+          mat-icon-button
+          [matMenuTriggerFor]="menu"
+          aria-label="Example icon-button with a menu"
+        >
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="this.router.navigate(['edit-cards'])">
+            <mat-icon>edit</mat-icon>
+            <span>Edit</span>
+          </button>
+          <button mat-menu-item (click)="this.router.navigate(['delete-cards'])">
+            <mat-icon>delete</mat-icon>
+            <span>Delete</span>
+          </button>
+        </mat-menu>
+      </div>
+    </div>
       <p class="card-description">{{ destino.descricao }}</p>
     </div>
   </div>
@@ -17,7 +34,8 @@
     <button
       mat-fab
       color="primary"
-      aria-label="Example icon button with a delete icon"
+      aria-label="Example icon button with a delete icon" 
+      (click)="this.router.navigate(['create-card'])"
     >
       <mat-icon>add</mat-icon>
     </button>
