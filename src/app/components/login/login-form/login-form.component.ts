@@ -8,13 +8,16 @@ import { DefaultCrudService } from 'src/app/shared/services/default-crud.service
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.scss']
+  styleUrls: ['./login-form.component.scss'],
 })
 export class LoginFormComponent {
   public hidePassword = true;
   public form: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.nullValidator]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.nullValidator,
+    ]),
   });
   public requestedLogin = false;
   http: any;
@@ -24,21 +27,20 @@ export class LoginFormComponent {
     public dialog: MatDialog
   ) {}
 
- async onLoginSubmit(): Promise<void> {
-    if (this.requestedLogin) {
+  async onLoginSubmit(): Promise<void> {
+    const data = this.form.value;
+    const auth = await this.authService.httpPost('authentication/login', data);
+    console.log(auth.data.accessToken);
+
+    if (auth.data.error) {
+      alert(auth.data.message);
       return;
     }
 
+    sessionStorage.setItem('access_token', auth.data.accessToken);
+    this.router.navigateByUrl('home');
   }
-   public users = []
+  public users = [];
 
-  ngOnInit(): void {
-  
-    
-    }
-  }
-
-
-
-
-
+  ngOnInit(): void {}
+}

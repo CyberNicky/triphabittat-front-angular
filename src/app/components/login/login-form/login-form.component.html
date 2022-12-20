@@ -1,29 +1,29 @@
 <section class="auth-form">
-  <form [formGroup]="form">
+  <form [formGroup]="form" (ngSubmit)="onLoginSubmit()">
     <img
       class="logo-triphabittat"
       src="../../../../assets/llogo.png"
       alt="logo"
     />
     <div class="form-input">
-      <input type="text" name="email" placeholder="E-mail" />
+      <input
+        type="text"
+        name="email"
+        placeholder="E-mail"
+        formControlName="email"
+      />
     </div>
     <div class="form-input">
       <input
-        type="text"
+        type="password"
         formControlName="password"
         name="password"
         placeholder="Senha"
       />
     </div>
-    <button
-      mat-button
-      class="button-login"
-      type="submit"
-      [disabled]="this.form.invalid"
+    <button mat-button class="button-login" type="submit">Entrar</button>
+    <a class="button-forgot-password" [routerLink]="['register']"
+      >Cadastre-se</a
     >
-      Entrar
-    </button>
-    <a class="button-forgot-password" [routerLink]="['register']">Cadastre-se</a>
   </form>
 </section>

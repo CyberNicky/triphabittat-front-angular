@@ -1,5 +1,5 @@
 <section class="auth-form">
-  <form [formGroup]="form">
+  <form [formGroup]="form" (ngSubmit)="handleRegister()">
     <img
       class="logo-triphabittat"
       src="../../../../assets/llogo.png"
@@ -14,11 +14,16 @@
       />
     </div>
     <div class="form-input" appearance="outline">
-      <input type="text" name="email" placeholder="E-mail" />
+      <input
+        type="text"
+        name="email"
+        placeholder="E-mail"
+        formControlName="email"
+      />
     </div>
     <div class="form-input" appearance="outline">
       <input
-        type="text"
+        type="password"
         formControlName="password"
         name="password"
         placeholder="Senha"
