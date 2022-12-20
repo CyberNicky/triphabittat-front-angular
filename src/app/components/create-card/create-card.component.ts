@@ -1,27 +1,33 @@
-import { Component } from '@angular/core';
+import { RegionalServices } from './../../shared/regional.service';
+import { DefaultCrudService } from './../../shared/services/default-crud.service';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-card',
   templateUrl: './create-card.component.html',
-  styleUrls: ['./create-card.component.scss']
+  styleUrls: ['./create-card.component.scss'],
 })
-export class CreateCardComponent {
+export class CreateCardComponent implements OnInit{
+  public cities = ([] = [RegionalServices]);
   public form: FormGroup = new FormGroup({
     name: new FormControl('', []),
     descricao: new FormControl('', []),
     imgUrl: new FormControl('', []),
     estado: new FormControl('', []),
-
   });
-  authService: any;
-  constructor(
-    public router: Router 
-  ){}
+  constructor(public router: Router, public crudService: DefaultCrudService,
+    public regionalService: RegionalServices
+    ) {}
+
+  ngOnInit(): void {
+    // this.regionalService.getStates().then
+  }
+
   async handleCreate() {
     const data = this.form.value;
-    const response = await this.authService.httpPost('destino/register', data);
+    const response = await this.crudService.httpPost('destino/register', data);
 
     if (response.data.error) {
       alert(response.data.message);
@@ -32,4 +38,3 @@ export class CreateCardComponent {
     this.router.navigateByUrl('destino');
   }
 }
-

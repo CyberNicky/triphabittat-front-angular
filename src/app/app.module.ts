@@ -60,5 +60,6 @@ import { DeleteCardsComponent } from './components/delete-cards/delete-cards.com
     },
   ],
   bootstrap: [AppComponent],
+  entryComponents: [DeleteCardsComponent]
 })
 export class AppModule {}

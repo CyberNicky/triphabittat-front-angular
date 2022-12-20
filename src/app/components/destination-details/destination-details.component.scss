@@ -2,10 +2,10 @@
   min-height: 100vh;
   display: flex;
 //   justify-content: center;
-  align-items: center;
   flex-direction: column;
   h1 {
     // height: 300px;
+    text-align: center;
     font-weight: bold;
   }
 }
@@ -14,24 +14,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 .destination-container {
-  display: grid;
   max-width: 1200px;
-  margin: 0 auto;
   display: flex;
 }
 
 .img-container {
-  height: 400px;
-  width: 390px;
-  background: black;
+
+  display: flex;
 }
 
 .img-destino {
-  width: 100%;
-  height: 100%;
+  height: 400px;
+  width: 390px;  
+  
 }
 
 .avaliation-title {
@@ -46,12 +45,49 @@
 }
 
 .destination {
-  display: flex;
-}
-.avaliation {
-  display: flex;
+  margin-left: 30px;
+
+  .destination-title{
+    text-align: center;
+    font-weight: bold;
+    font-size: x-large;
+    margin: 10px;
+ 
+
+  }
+  .destination-description{
+    font-weight: bold;
+    font-size: small;
+    margin: 10px;
+    color: rgb(129, 129, 129);
+  }
+
 }
 .avaliations-title {
-  color: black;
+  font-weight: bold;
+    font-size: small;
+    margin: 10px;
+    margin-top: 40px;
+    margin-left: 0;
 }
+.avaliations-container{
+  margin-top: 15px;
+  flex: 1;
+  .avaliation-text-area {
+    width: 100% ;
+  }
+}
+.color-title{
+  background-color: blue;
+  
+}
+.avaliation{
+  flex-direction: column;
+  display: flex;
+  align-items: flex-start;
+
+  
+}
+
+
 

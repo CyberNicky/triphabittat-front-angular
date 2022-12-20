@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./delete-cards.component.scss']
 })
 export class DeleteCardsComponent {
+  
 
 }

@@ -1,33 +1,41 @@
 <div class="container">
-    <h1>Avaliação dos Destinos</h1>
-    <div class="destination-container">
-
-        <div class="avaliation-destino">
-            <div class="destination">
-                <div class="img-container">
-                    <img class="img-destino"
-                        src="https://images.pexels.com/photos/5992619/pexels-photo-5992619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
-                </div>
-                <div class="dest-info-container">
-                    <p class="destination-title">São paulo</p>
-                    <p class="destination-description">Esse lugar é top</p>
-                    <div class="avaliations-container">
-                        <!-- <div class="avaliation " *ngFor="let avaliacao of destino.avaliacoes">
-                                        <p class="avaliation-user">{{avaliacao.user}}</p>
-                                        <p class="avaliation-description">{{avaliacao.descricao}}</p>
-                                    </div> -->
-                                    <p class="avaliations-title">AVALIAÇÕES</p>
-                        <div class="avaliation ">
-                            <p class="avaliation-user">Monique</p>
-                            <p class="avaliation-description">Amei esse lugar</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            
-
+  <h1>Avaliação dos Destinos</h1>
+  <div class="destination-container">
+    <div class="avaliation-destino">
+      <div class="destination">
+        <div class="img-container">
+          <img class="img-destino" [src]="destino.img_url" />
+          <div class="dest-info-container">
+            <p class="destination-title">São paulo</p>
+            <p class="destination-description">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of type
+              and scrambled it to make a type specimen book. It has survived not
+              only five centuries, but also the
+            </p>
+          </div>
         </div>
-
+        <div class="avaliations-container">
+          <mat-form-field appearance="fill" class='avaliation-text-area'>
+            <mat-label>Avaliar</mat-label>
+            <textarea matInput formControlName="descricao"> </textarea>
+          </mat-form-field>
+          <button class="color-title" mat-button type="submit">
+            <mat-icon>near_me</mat-icon>
+            Enviar
+          </button>
+          <!-- <div class="avaliation " *ngFor="let avaliacao of destino.avaliacoes">
+                                      <p class="avaliation-user">{{avaliacao.user}}</p>
+                                      <p class="avaliation-description">{{avaliacao.descricao}}</p>
+                                  </div> -->
+          <p class="avaliations-title">AVALIAÇÕES:</p>
+          <div class="avaliation">
+            <p class="avaliation-user">Monique</p>
+            <p class="avaliation-description">Amei esse lugar</p>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

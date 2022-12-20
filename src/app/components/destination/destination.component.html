@@ -1,6 +1,6 @@
 <div class="container">
   <div class="cards-container">
-    <div class="card-destino" *ngFor="let destino of allDestino">
+    <div class="card-destino" *ngFor="let destino of allDestino" >
       <div class="img-container">
         <img class="img-destino" [src]="destino.img_url" />
       </div>
@@ -19,7 +19,7 @@
             <mat-icon>edit</mat-icon>
             <span>Edit</span>
           </button>
-          <button mat-menu-item (click)="this.router.navigate(['delete-cards'])">
+          <button mat-menu-item (click)="openConfirmationDialog()">
             <mat-icon>delete</mat-icon>
             <span>Delete</span>
           </button>
