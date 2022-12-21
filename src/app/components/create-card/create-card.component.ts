@@ -52,6 +52,6 @@ export class CreateCardComponent implements OnInit {
     }
 
     alert('Registrado com sucesso!');
-    this.router.navigateByUrl('destino');
+    this.router.navigate(['destinos']);
   }
 }

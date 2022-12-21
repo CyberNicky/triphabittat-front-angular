@@ -53,7 +53,7 @@ export class EditCardsComponent implements OnInit {
 
   async handleEdit() {
     const data = this.form.value;
-    const response = await this.crudService.httpPost('destino/register', data);
+    const response = await this.crudService.httpPut(`destino/${this.destId}`, data);
 
     if (response.data.error) {
       alert(response.data.message);
@@ -61,6 +61,6 @@ export class EditCardsComponent implements OnInit {
     }
 
     alert('Editado com sucesso!');
-    this.router.navigateByUrl('destino');
+    this.router.navigate(['destinos']);
   }
 }
