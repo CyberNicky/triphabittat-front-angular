@@ -1,28 +1,35 @@
 <router-outlet *ngIf="!isUserLogged"></router-outlet>
 
 <mat-drawer-container *ngIf="isUserLogged" class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side"[opened]="true">
+  <mat-drawer #drawer class="example-sidenav" mode="side" [opened]="true">
     <div class="logo-img">
       <img class="img-logo" src="../assets/logo2.png" />
       <mat-list>
-        <button class="color-title" mat-button (click)="this.router.navigate(['home'])"  >
+        <button
+          class="color-title"
+          mat-button
+          (click)="this.router.navigate(['home'])"
+        >
           <mat-icon>home</mat-icon>
           Home
         </button>
-        
-        </mat-list>
-        <mat-list>
-          <button class="color-title" mat-button (click)="this.router.navigate(['destinos'])" >
-            <mat-icon>favorite</mat-icon>
-            Destinos
-          </button>
-        </mat-list>
-        <mat-list>
-          <button class="color-title" mat-button >
-            <mat-icon>open_in_new</mat-icon>
-            Logout
-          </button>
-        </mat-list>
+      </mat-list>
+      <mat-list>
+        <button
+          class="color-title"
+          mat-button
+          (click)="this.router.navigate(['destinos'])"
+        >
+          <mat-icon>favorite</mat-icon>
+          Destinos
+        </button>
+      </mat-list>
+      <mat-list>
+        <button class="color-title" mat-button (click)="onLogout()">
+          <mat-icon>open_in_new</mat-icon>
+          Logout
+        </button>
+      </mat-list>
     </div>
     <hr />
   </mat-drawer>
@@ -30,7 +37,6 @@
   <div class="example-sidenav-content">
     <button type="button" mat-button (click)="drawer.toggle()">Menu</button>
   </div>
-
 
   <router-outlet></router-outlet>
 </mat-drawer-container>

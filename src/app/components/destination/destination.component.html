@@ -1,31 +1,39 @@
 <div class="container">
   <div class="cards-container">
-    <div class="card-destino" *ngFor="let destino of allDestino" >
-      <div class="img-container">
-        <img class="img-destino" [src]="destino.img_url" />
+    <div class="card-destino" *ngFor="let destino of allDestino">
+      <div
+        class="img-container"
+        (click)="
+          this.router.navigate(['avaliation-destinations/' + destino.id])
+        "
+      >
+        <img class="img-destino" [src]="destino.imgUrl" />
       </div>
       <div class="icon-container">
-      <p class="card-title">{{ destino.name }}</p>
-      <div class="icon">
-        <button
-          mat-icon-button
-          [matMenuTriggerFor]="menu"
-          aria-label="Example icon-button with a menu"
-        >
-          <mat-icon>more_vert</mat-icon>
-        </button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item (click)="this.router.navigate(['edit-cards'])">
-            <mat-icon>edit</mat-icon>
-            <span>Edit</span>
+        <p class="card-title">{{ destino.name }}</p>
+        <div class="icon">
+          <button
+            mat-icon-button
+            [matMenuTriggerFor]="menu"
+            aria-label="Example icon-button with a menu"
+          >
+            <mat-icon>more_vert</mat-icon>
           </button>
-          <button mat-menu-item (click)="openConfirmationDialog()">
-            <mat-icon>delete</mat-icon>
-            <span>Delete</span>
-          </button>
-        </mat-menu>
+          <mat-menu #menu="matMenu">
+            <button
+              mat-menu-item
+              (click)="this.router.navigate(['edit-cards/' + destino.id])"
+            >
+              <mat-icon>edit</mat-icon>
+              <span>Edit</span>
+            </button>
+            <button mat-menu-item (click)="handleDelete(destino.id)">
+              <mat-icon>delete</mat-icon>
+              <span>Delete</span>
+            </button>
+          </mat-menu>
+        </div>
       </div>
-    </div>
       <p class="card-description">{{ destino.descricao }}</p>
     </div>
   </div>
@@ -34,7 +42,7 @@
     <button
       mat-fab
       color="primary"
-      aria-label="Example icon button with a delete icon" 
+      aria-label="Example icon button with a delete icon"
       (click)="this.router.navigate(['create-card'])"
     >
       <mat-icon>add</mat-icon>

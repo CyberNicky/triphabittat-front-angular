@@ -15,14 +15,14 @@ const routes: Routes = [
     component: LoginComponent,
     data: {
       hasSystemBar: false,
-    }
+    },
   },
   {
     path: 'register',
     component: RegisterComponent,
     data: {
       hasSystemBar: false,
-    }
+    },
   },
   {
     path: 'home',
@@ -30,42 +30,44 @@ const routes: Routes = [
     canActivate: [AuthGuardService],
     data: {
       hasSystemBar: true,
-
-    }
+    },
   },
   {
-    path: 'avaliation-destinations',
+    path: 'avaliation-destinations/:id',
     component: DestinationDetailsComponent,
+    canActivate: [AuthGuardService],
     data: {
       hasSystemBar: true,
-    }
+    },
   },
   {
     path: 'destinos',
     component: DestinationComponent,
+    canActivate: [AuthGuardService],
     data: {
       hasSystemBar: true,
-    }
+    },
   },
   {
     path: 'create-card',
     component: CreateCardComponent,
+    canActivate: [AuthGuardService],
     data: {
       hasSystemBar: true,
-    }
+    },
   },
   {
-    path: 'edit-cards',
+    path: 'edit-cards/:id',
     component: EditCardsComponent,
+    canActivate: [AuthGuardService],
     data: {
       hasSystemBar: true,
-    }
-  }
-  
+    },
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

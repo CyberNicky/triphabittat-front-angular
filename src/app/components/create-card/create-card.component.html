@@ -9,17 +9,20 @@
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Selecione o estado</mat-label>
-      <mat-select formControlName="estado">
-        <mat-option *ngFor="let city of cities" [value]="city">
-          {{ city }}
-          </mat-option>
+      <mat-select
+        formControlName="state"
+        (selectionChange)="handleSelectState()"
+      >
+        <mat-option *ngFor="let state of states" [value]="state.nome">
+          {{ state.nome }}
+        </mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Selecione a cidade</mat-label>
       <mat-select formControlName="name">
-        <mat-option *ngFor="let city of cities" [value]="city">
-          {{ city }}
+        <mat-option *ngFor="let city of cities" [value]="city.nome">
+          {{ city.nome }}
         </mat-option>
       </mat-select>
     </mat-form-field>

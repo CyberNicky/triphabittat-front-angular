@@ -9,20 +9,37 @@ import { Router } from '@angular/router';
   templateUrl: './create-card.component.html',
   styleUrls: ['./create-card.component.scss'],
 })
-export class CreateCardComponent implements OnInit{
-  public cities = ([] = [RegionalServices]);
+export class CreateCardComponent implements OnInit {
+  public cities: any = [];
+  public states: any = [];
   public form: FormGroup = new FormGroup({
     name: new FormControl('', []),
     descricao: new FormControl('', []),
     imgUrl: new FormControl('', []),
-    estado: new FormControl('', []),
+    state: new FormControl('', []),
   });
-  constructor(public router: Router, public crudService: DefaultCrudService,
+  constructor(
+    public router: Router,
+    public crudService: DefaultCrudService,
     public regionalService: RegionalServices
-    ) {}
+  ) {}
 
   ngOnInit(): void {
-    // this.regionalService.getStates().then
+    this.regionalService.getStates().then((response) => {
+      this.states = response;
+      console.log(response);
+    });
+  }
+
+  handleSelectState() {
+    const state = this.states.find(
+      (state: any) => state.nome === this.form.get('state')?.value
+    );
+    console.log(state);
+    this.regionalService.getCities(state.sigla).then((response) => {
+      this.cities = response;
+      console.log(response);
+    });
   }
 
   async handleCreate() {

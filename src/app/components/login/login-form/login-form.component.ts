@@ -38,6 +38,7 @@ export class LoginFormComponent {
     }
 
     sessionStorage.setItem('access_token', auth.data.accessToken);
+    sessionStorage.setItem('user', JSON.stringify(auth.data.user));
     this.router.navigateByUrl('home');
   }
   public users = [];
