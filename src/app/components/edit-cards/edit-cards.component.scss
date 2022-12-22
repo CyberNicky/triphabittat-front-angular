@@ -1,15 +1,47 @@
 .container{
     min-height: 100vh;
-    p{
+    .title-container{
         font-weight: 600;
         font-size: 50px;
-        margin: 15px 0 5px 15px;
+        margin: 15px 0 30px 15px;
+    
     }
+
+}
+
+.form-container {
+    display: flex ;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 1400px;
+    margin: 30px auto;
+    border: solid 1px #dedede;
+    border-radius: 5px;
+    padding: 10px;
+    gap: 20px;
+
 }
 
 .form{
-
-    margin: 36px;
+    flex: 1;
+    // margin: 36px;
     display: flex;
     flex-direction: column;
 }
+
+.container-img{
+    height: 280px;
+    width: 290px;
+    background: #dedede;
+    border: 0;
+
+}
+
+.img-destino {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+

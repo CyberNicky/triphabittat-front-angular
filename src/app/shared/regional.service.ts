@@ -10,7 +10,7 @@ import { DefaultCrudService } from './services/default-crud.service';
 })
 
 export class RegionalServices{
-    private url = "https://servicodados.ibge.gov.br/api/v1/localidades/estados/"
+    private url = "https://servicodados.ibge.gov.br/api/v1/localidades/estados"
     constructor(
         private http: HttpClient,
         public snackBar: MatSnackBar,
@@ -19,7 +19,7 @@ export class RegionalServices{
 
     async getStates(): Promise<any> {
       return new Promise((resolve, reject) => {
-        this.http.get(this.url).subscribe(
+        this.http.get(this.url+'?orderBy=nome').subscribe(
           (res: any) => resolve(res),
           (rej: HttpErrorResponse) => {
             let errorMessage = rej.error?.message ?? rej.message;
@@ -49,7 +49,7 @@ export class RegionalServices{
 
     async getCities(regionalCode: string): Promise<any> {
         return new Promise((resolve, reject) => {
-          const url = this.url + `${regionalCode}/distritos`
+          const url = this.url + `/${regionalCode}/distritos?orderBy=nome`
           this.http.get(url).subscribe(
             (res: any) => resolve(res),
             (rej: HttpErrorResponse) => {
