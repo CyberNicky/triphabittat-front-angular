@@ -1,4 +1,4 @@
-##TripHabittat-Turismo##
+#TripHabittat-Turismo
 
 Para utilizar o projeto, você tem fazer o setup inicial: primeiramente, no diretório do projeto, digite o comando: 
 `npm install`
